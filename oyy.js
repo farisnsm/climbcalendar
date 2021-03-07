@@ -3,7 +3,7 @@ var moment = require('moment')
 
 async function oyy(){
     let Result = []
-    let browser = await puppeteer.launch({headless: true});
+    let browser = await puppeteer.launch({headless: true,ignoreDefaultArgs: ['--disable-extensions']});
     let page = await browser.newPage();
 
     await page.goto('https://www.picktime.com/oyy',{waitUntil:'networkidle2'})

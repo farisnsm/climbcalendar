@@ -4,7 +4,7 @@ let result = []
 
 async function bff(){
     let res1 = []
-    let browser = await puppeteer.launch({headless: true});
+    let browser = await puppeteer.launch({headless: true,ignoreDefaultArgs: ['--disable-extensions']});
     let page = await browser.newPage();
     await page.goto('https://app.acuityscheduling.com/schedule.php?owner=19322912&owner=19322912&appointmentType=13677944#',{waitUntil:'networkidle2'})
     var week = Math.ceil(moment().format("D") / 7) + 3

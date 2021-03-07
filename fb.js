@@ -4,7 +4,7 @@ let result = []
 
 async function fb(){
     let res = []
-    let browser = await puppeteer.launch({headless: true});
+    let browser = await puppeteer.launch({headless: true,ignoreDefaultArgs: ['--disable-extensions']});
     let page = await browser.newPage();
     await page.goto('https://fitbloc.com/booking/',{waitUntil:'networkidle2'})
 
