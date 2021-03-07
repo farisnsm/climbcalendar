@@ -19,6 +19,7 @@ async function main(){
     temp = temp.concat(await fb())
     temp = temp.concat(await oyy())
     temp.sort((a, b) => (a.ts>b.ts) ? 1 : -1)
+    result = []
     result=temp
 //console.log(arr);
 }
