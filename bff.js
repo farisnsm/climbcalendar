@@ -54,9 +54,9 @@ async function bff(){
             day=1
         }
     }
-    console.table(result)
+    //console.table(result)
     await browser.close()
     return result
 }
-bff()
+//bff()
 module.exports = bff
