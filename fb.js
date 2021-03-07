@@ -25,6 +25,8 @@ async function fb(){
             }
         })
     })
+
+    await browser.close()
     return(res)
 }
 

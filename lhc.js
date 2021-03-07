@@ -35,6 +35,8 @@ async function lhc(){
 
         })
     })
+
+    await browser.close()
     return(res2)
 
 }

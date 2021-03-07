@@ -56,6 +56,8 @@ async function bw(){
         }
     })
     //console.table(Result)
+
+    await browser.close()
     return Result
     //console.table(res)
 }

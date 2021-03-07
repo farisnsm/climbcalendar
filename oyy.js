@@ -39,6 +39,7 @@ async function oyy(){
     })
 
 
+    await browser.close()
     return(Result)
     //console.table(Result)
     //console.table(res)

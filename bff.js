@@ -48,6 +48,7 @@ async function bff(){
             day=1
         }
     }
+    await browser.close()
     return result
 }
 
