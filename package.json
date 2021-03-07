@@ -4,7 +4,7 @@
   "description": "\"Scrapper for climbing gym availability\"",
   "main": "web.js",
   "scripts": {
-    "test": "\"test\""
+    "start": "nodemon web.js"
   },
   "author": "",
   "license": "ISC",
