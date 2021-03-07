@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer')
 var moment = require('moment')
-let result = []
+
 
 async function bff(){
+    let result = []
     let res1 = []
     const browser = await puppeteer.launch({
         args: [
@@ -41,7 +42,7 @@ async function bff(){
             data = data.toString().split("\n\n")
             data.pop()
             data.forEach(function(R){
-                console.log(R)
+                //console.log(R)
                 result.push({gym:"BFF",date: moment().add(i,"days").format("DD MMM YYYY"),time:moment(R.split("\n")[0],'LT').format('LT'),slots: Number(R.split("\n")[1].split(' ')[0]),ts: moment().add(i,"days").format("YYYYMMDD") + moment(R.split("\n")[0],'LT').format('HHmm')})
             })
             //console.log(result)

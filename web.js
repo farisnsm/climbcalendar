@@ -14,10 +14,15 @@ async function main(){
     let temp = []
     console.log(moment().format("DD MMM YYYY HH:mm A"))
     temp = temp.concat(await bw())
+    console.log('BW completed')
     temp = temp.concat(await lhc())
+    console.log('LHC completed')
     temp = temp.concat(await bff())
+    console.log('BFF completed')
     temp = temp.concat(await fb())
+    console.log('FB completed')
     temp = temp.concat(await oyy())
+    console.log('OYY completed')
     temp.sort((a, b) => (a.ts>b.ts) ? 1 : -1)
     result = []
     result=temp
