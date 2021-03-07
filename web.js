@@ -8,23 +8,7 @@ var express = require('express')
 var app = express()
 let result = []
 let port=process.env.PORT || 3000
-var table = '<!DOCTYPE html>\n' +
-    '<html lang="en">\n' +
-    '<style>\n' +
-    '    table, th, td {\n' +
-    '        border: 1px solid black;\n' +
-    '        border-collapse: collapse;\n' +
-    '        text-align: center;\n' +
-    '    }\n' +
-    '</style>\n' +
-    '<table style="width:100%">\n' +
-    '    <tr>\n' +
-    '        <th>GYM</th>\n' +
-    '        <th>Date</th>\n' +
-    '        <th>Start Time</th>\n' +
-    '        <th>Slots</th>\n' +
-    '    </tr>\n' + 'xxx' +
-    '</table>'
+
 
 async function main(){
     let temp = []
@@ -47,6 +31,23 @@ app.get('/api',(req,res)=>{
 
 app.get('/main',(req,res)=>{
     var list = ''
+    var table = '<!DOCTYPE html>\n' +
+        '<html lang="en">\n' +
+        '<style>\n' +
+        '    table, th, td {\n' +
+        '        border: 1px solid black;\n' +
+        '        border-collapse: collapse;\n' +
+        '        text-align: center;\n' +
+        '    }\n' +
+        '</style>\n' +
+        '<table style="width:100%">\n' +
+        '    <tr>\n' +
+        '        <th>GYM</th>\n' +
+        '        <th>Date</th>\n' +
+        '        <th>Start Time</th>\n' +
+        '        <th>Slots</th>\n' +
+        '    </tr>\n' + 'xxx' +
+        '</table>'
     result.forEach(function(R){
         list = list + '<tr>\n' +
             '        <td>'+R.gym+'</td>\n' +
