@@ -41,7 +41,7 @@ async function bff(){
             data = data.toString().split("\n\n")
             data.pop()
             data.forEach(function(R){
-                result.push({gym:"BFF",date: moment().add(i,"days").format("DD MMM YYYY"),time:R.split("\n")[0],slots: Number(R.split("\n")[1].split(' ')[0]),ts: moment().add(i,"days").format("YYYYMMDD") + moment(R.split("\n")[0],'LT').format('HHmm')})
+                result.push({gym:"BFF",date: moment().add(i,"days").format("DD MMM YYYY"),time:moment(R.split("\n")[0],'LT').format('LT'),slots: Number(R.split("\n")[1].split(' ')[0]),ts: moment().add(i,"days").format("YYYYMMDD") + moment(R.split("\n")[0],'LT').format('HHmm')})
             })
             //console.log(result)
         }

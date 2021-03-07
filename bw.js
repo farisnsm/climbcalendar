@@ -32,7 +32,7 @@ async function bw(){
     let res1 = data1.toString().split("\n").join("").split("\t\t").join("xxx").split("\t").join("").split('xxx')
     res1.forEach(function(R){
         if(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]!=='0'){
-            Result.push({gym:"BW",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:R.split(" ")[3] + R.split(" ")[4],slots: Number(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
+            Result.push({gym:"BW",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('LT'),slots: Number(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
         }
     })
 
@@ -57,7 +57,7 @@ async function bw(){
     let res2 = data2.toString().split("\n").join("").split("\t\t").join("xxx").split("\t").join("").split('xxx')
     res2.forEach(function(R){
         if(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]!=='0'){
-            Result.push({gym:"BW",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:R.split(" ")[3] + R.split(" ")[4],slots: Number(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
+            Result.push({gym:"BW",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('LT'),slots: Number(R.split("Asia/Singapore (")[1].split(" ")[0].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
         }
     })
     //console.table(Result)

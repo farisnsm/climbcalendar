@@ -35,7 +35,7 @@ async function lhc(){
                     slots = 42-Math.round(r.split(";")[0].split(', ')[0]/100*42)
                 }
                 //console.log(slots,r.split('c3="">')[1].split('</h1>')[0],r.split('class="date"><!----> ')[1].split(' ')[0])
-                res2.push({gym:"LHC",date: date,time:r.split('class="date"><!----> ')[1].split(' ')[0],slots: slots,ts: date2 + moment(r.split('class="date"><!----> ')[1].split(' ')[0],'LT').format('HHmm')})
+                res2.push({gym:"LHC",date: date,time:moment(r.split('class="date"><!----> ')[1].split(' ')[0],'LT').format('LT'),slots: slots,ts: date2 + moment(r.split('class="date"><!----> ')[1].split(' ')[0],'LT').format('HHmm')})
             }
 
         })

@@ -39,7 +39,7 @@ async function oyy(){
     //console.table(res1)
     res1.forEach(function(R){
         if(R.split("Singapore (")[1].split('/')[0]!=='0'){
-            Result.push({gym:"OYY",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:R.split(" ")[3] + R.split(" ")[4],slots: Number(R.split("Singapore (")[1].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
+            Result.push({gym:"OYY",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('LT'),slots: Number(R.split("Singapore (")[1].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
         }
     })
 

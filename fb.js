@@ -26,7 +26,7 @@ async function fb(){
         data2.forEach(function(data3,i){
             if(data3.indexOf(' open')!==-1 && data2[i-2].split(' (')[0]==="Gym Entry"){
                 //console.log(data2[0],data2[i-2],data3)
-                res.push({gym:"FB",date: moment(data2[0] + ' 2021','MMMM D 2021').format("DD MMM YYYY"),time:data2[i-2].split("(")[1].split(' ')[0],slots: Number(data3.split(' ')[0]),ts: moment(data2[0] + ' 2021','MMMM D 2021').format("YYYYMMDD") + moment(data2[i-2].split("(")[1].split(' ')[0],'LT').format('HHmm')})
+                res.push({gym:"FB",date: moment(data2[0] + ' 2021','MMMM D 2021').format("DD MMM YYYY"),time:moment(data2[i-2].split("(")[1].split(' ')[0],'LT').format('LT'),slots: Number(data3.split(' ')[0]),ts: moment(data2[0] + ' 2021','MMMM D 2021').format("YYYYMMDD") + moment(data2[i-2].split("(")[1].split(' ')[0],'LT').format('HHmm')})
             }
         })
     })
