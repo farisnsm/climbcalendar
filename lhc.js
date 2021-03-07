@@ -4,7 +4,12 @@ var moment = require('moment')
 async function lhc(){
     let res1 = []
     let res2 = []
-    let browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
+    const browser = await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ],
+    });
     let page = await browser.newPage();
     await page.goto('https://widget.fitdegree.com/231/live-schedule?open_externally=false&today_only=false',{waitUntil:'networkidle2'})
     await page.waitForSelector('body > app-root > live-schedule-widget > fd-registrable-preview:nth-child(3)')

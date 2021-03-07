@@ -4,7 +4,12 @@ let result = []
 
 async function fb(){
     let res = []
-    let browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
+    const browser = await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ],
+    });
     let page = await browser.newPage();
     await page.goto('https://fitbloc.com/booking/',{waitUntil:'networkidle2'})
 

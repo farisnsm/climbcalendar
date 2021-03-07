@@ -3,7 +3,12 @@ var moment = require('moment')
 
 async function bw(){
     let Result = []
-    let browser = await puppeteer.launch({ignoreDefaultArgs: ['--disable-extensions']});
+    const browser = await puppeteer.launch({
+        args: [
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+        ],
+    });
     let page = await browser.newPage();
 
     await page.goto('https://www.picktime.com/566fe29b-2e46-4a73-ad85-c16bfc64b34b',{waitUntil:'networkidle2'})
