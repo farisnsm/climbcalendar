@@ -34,6 +34,7 @@ async function bff(){
             //console.log('x')
             await page.click('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-date > table.calendar > tbody > tr:nth-child('+week+') > td:nth-child('+day+')')
             //console.log('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-date > table.calendar > tbody > tr:nth-child('+week+') > td:nth-child('+day+')')
+            await page.waitFor(1000)
             await page.waitForSelector('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-time-container > div.choose-time > div > label[data-qa="select_appt"]')
             let data = await page.evaluate(()=>{
                 return document.querySelector('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-time-container > div.choose-time > div').innerText
