@@ -6,9 +6,10 @@ var oyy = require('./oyy');
 var moment = require('moment')
 var express = require('express')
 var app = express()
+var cors = require('cors')
 let result = []
 let port=process.env.PORT || 3000
-
+app.use(cors())
 
 async function main(){
     let temp = []
@@ -29,7 +30,7 @@ async function main(){
 //console.log(arr);
 }
 main()
-setInterval(main, 60000);
+setInterval(main, 300000);
 
 app.get('/api',(req,res)=>{
     res.send(result)
