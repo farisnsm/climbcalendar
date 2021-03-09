@@ -3,7 +3,7 @@ var moment = require('moment')
 
 async function bw(){
     let Result = []
-    const browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({headless:false,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -29,8 +29,8 @@ async function bw(){
     //click weekday
     await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(1)');
     await page.waitFor(500)
-    await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(1)');
-    await page.waitFor(500)
+    //await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(1)');
+    //await page.waitFor(500)
 
     await page.waitForSelector('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list sessions-list"]')
     await page.waitFor(500)
@@ -64,8 +64,8 @@ async function bw(){
     //click weekday
     await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(2)');
     await page.waitFor(500)
-    await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(2)');
-    await page.waitFor(500)
+    //await page.click('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list class-list"] > li:nth-child(2)');
+    //await page.waitFor(500)
 
     await page.waitForSelector('div[id="wrapper"] > div[id="booking-content"] > div[class="booking-body-cont unselectable"] > div[class="booking-body clearfix"] > div[class="booking-list-box"] > ul[class="booking-list sessions-list"]')
     await page.waitFor(500)
