@@ -5,7 +5,7 @@ var moment = require('moment')
 async function bff(){
     let result = []
     let res1 = []
-    const browser = await puppeteer.launch({
+    const browser = await puppeteer.launch({headless:true,
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -32,9 +32,12 @@ async function bff(){
         //console.log(moment().add(i-1,"days").format("YYYY-MM-DD"))
         if(dates.indexOf(moment().add(i-1,"days").format("YYYY-MM-DD"))!==-1){
             //console.log('x')
-            await page.click('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-date > table.calendar > tbody > tr:nth-child('+week+') > td:nth-child('+day+')')
+            await page.waitForTimeout(500)
+            await page.click('#addons-prompt')
+            await page.waitForTimeout(500)
+            await page.click('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div[class="choose-date"] > table[class="calendar"] > tbody > tr:nth-child('+week+') > td:nth-child('+day+')')
             //console.log('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-date > table.calendar > tbody > tr:nth-child('+week+') > td:nth-child('+day+')')
-            await page.waitFor(1000)
+            await page.waitForTimeout(1000)
             await page.waitForSelector('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-time-container > div.choose-time > div > label[data-qa="select_appt"]')
             let data = await page.evaluate(()=>{
                 return document.querySelector('#step-pick-appointment > div.pane.pick-appointment-pane > div.choose-date-time > div.choose-time-container > div.choose-time > div').innerText
