@@ -40,7 +40,7 @@ async function bw(){
     })
 
     let res1 = data1.toString().split("\n").join("").split("\t\t").join("xxx").split("\t").join("").split('xxx')
-    console.log(res1)
+    //console.log(res1)
     res1.forEach(function(R){
         if(R.split('/')[0]!=='0'){
             Result.push({gym:"BW",date: moment(R.split("Available")[1].split(",")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[4] + R.split(" ")[5],'LT').format('LT'),slots: Number(R.split('/')[0]),ts:moment(R.split("Available")[1].split(",")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[4] + R.split(" ")[5],'LT').format('HHmm')})
