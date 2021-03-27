@@ -38,16 +38,16 @@ async function oyy(){
     let res1 = data1.toString().split("\n").join("").split("\t\t").join("xxx").split("\t").join("").split('xxx')
     //console.table(res1)
     res1.forEach(function(R){
-        if(R.split("Singapore (")[1].split('/')[0]!=='0'){
-            Result.push({gym:"OYY",date: moment(R.split(", ")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('LT'),slots: Number(R.split("Singapore (")[1].split('/')[0]),ts:moment(R.split(", ")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[3] + R.split(" ")[4],'LT').format('HHmm')})
+        if(R.split('/')[0]!=='0'){
+            Result.push({gym:"OYY",date: moment(R.split("Available")[1].split(",")[0],"Do MMM YYYY").format("DD MMM YYYY"),time:moment(R.split(" ")[4] + R.split(" ")[5],'LT').format('LT'),slots: Number(R.split('/')[0]),ts:moment(R.split("Available")[1].split(",")[0],"Do MMM YYYY").format("YYYYMMDD") + moment(R.split(" ")[4] + R.split(" ")[5],'LT').format('HHmm')})
         }
     })
 
+    //console.table(Result)
 
     await browser.close()
     return(Result)
-    //console.table(Result)
     //console.table(res)
 }
-
+//oyy()
 module.exports = oyy
