@@ -14,23 +14,50 @@ app.use(cors())
 async function main(){
     let temp = []
     console.log(moment().format("DD MMM YYYY HH:mm A"))
-    temp = temp.concat(await bw())
-    console.log('BW completed')
-    temp = temp.concat(await lhc())
-    console.log('LHC completed')
-    temp = temp.concat(await bff())
-    console.log('BFF completed')
-    temp = temp.concat(await fb())
-    console.log('FB completed')
-    temp = temp.concat(await oyy())
-    console.log('OYY completed')
+
+    try{
+        temp = temp.concat(await bw())
+        console.log('BW completed')
+    } catch (error) {
+        console.log(error)
+    }
+
+    try{
+        temp = temp.concat(await oyy())
+        console.log('OYY completed')
+    } catch (error) {
+        console.log(error)
+    }
+
+    try{
+        temp = temp.concat(await fb())
+        console.log('FB completed')
+    } catch (error) {
+        console.log(error)
+    }
+
+    try{
+        temp = temp.concat(await lhc())
+        console.log('LHC completed')
+    } catch (error) {
+        console.log(error)
+    }
+
+    try{
+        temp = temp.concat(await bff())
+        console.log('BFF completed')
+    } catch (error) {
+        console.log(error)
+    }
+
+
     temp.sort((a, b) => (a.ts>b.ts) ? 1 : -1)
     result = []
     result=temp
+    main()
 //console.log(arr);
 }
 main()
-setInterval(main, 300000);
 
 app.get('/api',(req,res)=>{
     res.send(result)
