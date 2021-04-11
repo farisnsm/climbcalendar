@@ -13,7 +13,7 @@ async function bff(){
     });
     let page = await browser.newPage();
     await page.goto('https://app.acuityscheduling.com/schedule.php?owner=19322912&owner=19322912&appointmentType=13677944#',{waitUntil:'networkidle2'})
-    var week = Math.ceil(moment().format("D") / 7) + 3
+    var week = Math.ceil(moment().format("D") / 7) + 2
     var day  = moment().add(-1,"days").day()+1
     //console.log(week)
     //console.log(day)
@@ -27,7 +27,7 @@ async function bff(){
         dates.push(a.split('"')[0])
     })
     //console.log(dates)
-    for (i=1;i<=7;i++){
+    for (i=1;i<=8;i++){
         //console.log(week)
         //console.log(moment().add(i-1,"days").format("YYYY-MM-DD"))
         if(dates.indexOf(moment().add(i-1,"days").format("YYYY-MM-DD"))!==-1){
