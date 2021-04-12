@@ -66,9 +66,9 @@ async function bff(){
         }
 
 
-    console.table(result)
+    //console.table(result)
     await browser.close()
     return result
 }
-bff()
+//bff()
 module.exports = bff
