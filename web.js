@@ -12,42 +12,51 @@ let port=process.env.PORT || 3000
 app.use(cors())
 
 async function main(){
+    let used = process.memoryUsage();
+    for (let key in used) {
+        console.log(`${key} ${Math.round(used[key] / 1024 / 1024 * 100) / 100} MB`);
+    }
     let temp = []
     console.log(moment().format("DD MMM YYYY HH:mm A"))
 
     try{
+        //console.log('Querying BW')
         temp = temp.concat(await bw())
-        console.log('BW completed')
+        //console.log('BW completed')
     } catch (error) {
-        console.log(error)
+        //console.log(error)
     }
 
     try{
+        //console.log('Querying OYY')
         temp = temp.concat(await oyy())
-        console.log('OYY completed')
+        //console.log('OYY completed')
     } catch (error) {
-        console.log(error)
+        //console.log(error)
     }
 
     try{
+        //console.log('Querying FB')
         temp = temp.concat(await fb())
-        console.log('FB completed')
+        //console.log('FB completed')
     } catch (error) {
-        console.log(error)
+        //console.log(error)
     }
 
     try{
+        //console.log('Querying LHC')
         temp = temp.concat(await lhc())
-        console.log('LHC completed')
+        //console.log('LHC completed')
     } catch (error) {
-        console.log(error)
+        //console.log(error)
     }
 
     try{
+        //console.log('Querying BFF')
         temp = temp.concat(await bff())
-        console.log('BFF completed')
+        //console.log('BFF completed')
     } catch (error) {
-        console.log(error)
+        //console.log(error)
     }
 
 

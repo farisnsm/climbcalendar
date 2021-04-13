@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer')
 var moment = require('moment')
-let result = []
 
 async function fb(){
     let res = []
